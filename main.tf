@@ -48,6 +48,6 @@ resource "aws_iam_policy" "s3-read-only" {
 # attaching policy to role
 
 resource "aws_iam_role_policy_attachment" "attach_policy" {
-  policy_arn = aws_iam_policy.name.arn
+  policy_arn = aws_iam_policy.s3-read-only.arn
   role = aws_iam_role.ec2-role.name
 }
