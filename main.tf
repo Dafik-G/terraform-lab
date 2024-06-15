@@ -34,7 +34,7 @@ resource "aws_iam_policy" "s3-read-only" {
                     "s3:GetObject",
                     "s3:ListObject"
                 ]
-                Resource : "arn:aws:s3:::var.s3-bucket-name"
+                Resource : "arn:aws:s3:::${var.s3-bucket-name}"
             }
         ]
     }
