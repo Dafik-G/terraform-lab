@@ -4,10 +4,10 @@ resource "aws_iam_role" "ec2-role-s3" {
     {
       Statement = [
         {
-          Action : "sts.AssumeRole",
-          Effect : "Allow",
-          Principal = {
-            Service = "ec2.amazonaws.com"
+          "Action" : "sts.AssumeRole",
+          "Effect" : "Allow",
+          "Principal" = {
+            "Service" = "ec2.amazonaws.com"
           }
         }
       ]
@@ -25,15 +25,15 @@ resource "aws_iam_policy" "s3-read-only" {
   name = var.policy_name
   policy = jsonencode(
     {
-      Version = "2012-10-17",
-      Statement = [
+      "Version" = "2012-10-17",
+      "Statement" = [
         {
-          Effect : "Allow",
-          Action : [
+          "Effect" : "Allow",
+          "Action" : [
             "s3:GetObject",
             "s3:ListObject"
           ]
-          Resource : "arn:aws:s3:::${var.s3-bucket-name}"
+          "Resource" : "arn:aws:s3:::${var.s3-bucket-name}"
         }
       ]
     }
