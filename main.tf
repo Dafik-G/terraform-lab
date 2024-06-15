@@ -22,7 +22,7 @@ resource "aws_iam_role" "ec2-role" {
 
 # creating policy to attach to role with s3-read-only-access
 
-resource "aws_iam_policy" "policy_name" {
+resource "aws_iam_policy" "s3-read-only" {
   name = var.policy_name
   policy = jsonencode(
     {
